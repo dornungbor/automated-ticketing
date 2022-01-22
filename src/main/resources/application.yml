@@ -1,0 +1,37 @@
+server:
+  port: 8181
+
+spring:
+  application.name: automated-ticketing
+  data:
+    mongodb:
+      host: 192.168.1.13
+      port: 27017
+      database: automated_ticketing
+      username: db_user
+      password: db_pass
+      authentication-database: admin
+
+ticketing:
+  redis:
+    host: 192.168.1.13
+    port: 6379
+    timeout: 10000
+  session:
+    defaultAccessTokenExpirySeconds: 1800
+    defaultRefreshTokenExpirySeconds: 2100
+  security:
+    privateKey: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCEUtV67AiAj97an93JvUMe78IniEZfOGsgt+P3HrpQb4nwxgiX/tvjqFJjhntXDpju1RillovMH2uI38tNsu0Xc0skW0u1T2eoJewgM6Bgx7RsphC76VX/nH+tJFGYxTnhLnkZk5cySQYscZpL408bDvPN3g9R1fqZgtgZkY3uk9aPFCYTVmNcvWs2OYV2J/xKps2fY36Flk2HyyMdZ+3JY5V31l/DYMl10miqyKDOVBzI6/B16kCrrpIoG2xLL4hesBdcUovZ1zWhKxCIac2pqJW7VTasLp+ukPd1iOEms2O5CxSdjfr0oUPco1uLBrC1Mm3nMxwJma3D45xUZMtFAgMBAAECggEAVhdKm6obsgFo3dbrRskjdWpKaMwJ9QPQ9z2NTQep8pFPLt65UqLXT5wA1o31i2OM7r6oRXvYQpsirK/mJwxFo184wVPAwxsBdu4NXboZGz5zTckR1CBw+lhI3U5m5D1VdgN1eMWEtou6P4o9+CfRHOqyhvt1/il43Q27KY+Ax3pj5GxFfA1CGHrPQ3FQYQ98By5olDEluszv/3QKtV6kelbnEsFLZhTWXqJexiPQapqr9JqAUQHJ3DRRiMWMOknwlyZhraFlcLoYWqF0IwhIB12j5xGwO9aXfOmLeQ2mk5+JxmJpywyiLAMiq8J5IYu8AdWONPwy7NaMadMBjinsYQKBgQDpoIkR5Uyq312YfDgjs0Uv19VSGD2cf5nWKkp/542tKin/oeA485m2QzMVLighl0Gf3e0Ogp/QHS+9daRBVUGmVlsS4gkD78j6DDO+dzFqf3v1mDhSE5LWwXGK5bPcCp9da+NwD2V7PdXfuX+Dk+9HYyEZzpxkAS1gsmMdkszBuQKBgQCQ/s0DnoEjIF/kBz30y1u140xxln7d+JfwNAiKavX8PmXbA8NVb4QLeVHch1QO2xLz8Yf4UVvxGyQ9W0Cg4lTeUlSLUa0rzUOCxAUPEqopKEFLmqWWeGYQ6nmO5oiZP4Mzyxjuo/xc6V6UGNSZUICSgP2hJZKeZu1v8VeyR9aL7QKBgGSI6rNCw008taAqxFXIjVtbO7cKK2kvF9ordMe5syPzYwNYe47GdT0TieXxaN+boWfULnDyESeTh7m16CsdLxUPUD29+zcwdoHzwkiSLjewCH3VNVdMiQHVWLD2zAFCqPWgucy9M2RnZaPSxWavwGYt6E6ctHvsbcSQv0o4o9gxAoGAQuPpfJPxC11yH2Zf5MC0LHMR3w0ItiprHbtDfWfe12GJ58ISqSVrC0gKxewAkWHrmnKAwcP24IIe89dXN2FyuaXNrwAdHanyTS9VDiEUMyyJAvHzFjmxDHi/X3dm6Rvt0UUO2Xj5gXt/0F6sJZaH2g5784272Cuvugbi6DJP/fkCgYB0wU4U7BZ4SN4VFWJ8RwhCbmhqjIdRItD2vrtGkOdl7724DVh6a356P3KdL50qDNwLcSn65SvGvvGVEfGEhrT3V3TQxNWWx9rvXGiI3aaidO43lw1RtjQ3qBAKTf5CVpY/LFBF3mPIOeRvAjT5SO4RQtUR75yu00yXUkpJHCpkjA==
+    publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhFLVeuwIgI/e2p/dyb1DHu/CJ4hGXzhrILfj9x66UG+J8MYIl/7b46hSY4Z7Vw6Y7tUYpZaLzB9riN/LTbLtF3NLJFtLtU9nqCXsIDOgYMe0bKYQu+lV/5x/rSRRmMU54S55GZOXMkkGLHGaS+NPGw7zzd4PUdX6mYLYGZGN7pPWjxQmE1ZjXL1rNjmFdif8SqbNn2N+hZZNh8sjHWftyWOVd9Zfw2DJddJoqsigzlQcyOvwdepAq66SKBtsSy+IXrAXXFKL2dc1oSsQiGnNqaiVu1U2rC6frpD3dYjhJrNjuQsUnY369KFD3KNbiwawtTJt5zMcCZmtw+OcVGTLRQIDAQAB
+    issuer: https://www.automated-ticketing.com/
+  users:
+    - username: dornu
+      hashedPassword: c6caa95dd88e1e94b6909bf6998a4b4a4a4c43d987a5b64aa3b52e8d85b989ee
+      role: ROLE_ADMIN
+    - username: test1
+      hashedPassword: c6caa95dd88e1e94b6909bf6998a4b4a4a4c43d987a5b64aa3b52e8d85b989ee
+      role: ROLE_DELIVERY_MANAGER
+    - username: test2
+      hashedPassword: c6caa95dd88e1e94b6909bf6998a4b4a4a4c43d987a5b64aa3b52e8d85b989ee
+      role: ROLE_TICKET_MANAGER
+    # the plaintext password is: super-secret
